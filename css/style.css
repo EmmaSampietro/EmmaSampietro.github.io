@@ -163,16 +163,31 @@ h1, h2, h3 {
 }
 
 .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: 0.9rem;
   text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 2px;
-  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.links a:hover { border-bottom-color: var(--ink); }
+.links__label {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
 
-.links span { font-size: 0.8em; color: var(--muted); }
+.links a:hover .links__label { border-bottom-color: var(--ink); }
+
+/* sized in em so each icon tracks its link's font-size */
+.icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.links a:hover .icon { color: var(--ink); }
 
 /* ---------------- sections ---------------- */
 
@@ -358,9 +373,10 @@ h1, h2, h3 {
 
 .footer__note { margin: 0; font-size: 0.88rem; color: var(--muted); }
 
-.links--footer { padding-bottom: 0; gap: 0.5rem 1.5rem; }
-.links--footer a { font-size: 0.88rem; border-bottom-color: transparent; }
-.links--footer a:hover { border-bottom-color: var(--ink); }
+.links--footer { margin-top: 0; gap: 0.5rem 1.5rem; }
+.links--footer a { font-size: 0.88rem; }
+.links--footer .links__label { border-bottom-color: transparent; }
+.links--footer a:hover .links__label { border-bottom-color: var(--ink); }
 
 /* ---------------- reveal on scroll ---------------- */
 
