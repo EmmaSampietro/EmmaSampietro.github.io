@@ -20,9 +20,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  /* one notch down: every size below is in rem, so this scales the whole
-     type scale (and the rem-based spacing) by 15/16 */
-  font-size: 15px;
+  /* two more notches down; every size below is in rem, so this scales the
+     whole type scale (and the rem-based spacing) by 13/16 */
+  font-size: 13px;
   scroll-behavior: smooth;
   /* keep anchor targets clear of the sticky nav */
   scroll-padding-top: 5rem;
@@ -192,15 +192,6 @@ h1, h2, h3 {
 
 .links a:hover .icon { color: var(--ink); }
 
-/* link inside running text, e.g. an organisation name in a skills row */
-.inline-link {
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  transition: border-color 0.2s ease;
-}
-
-.inline-link:hover { border-bottom-color: var(--ink); }
-
 /* project figure; click through for a legible full-size view, since the
    labels in these plots are too small to read at card width */
 .card__figure {
@@ -317,7 +308,8 @@ h1, h2, h3 {
 .timeline--slim .logo { align-self: center; }
 
 .entry__when {
-  font-size: 0.78rem;
+  /* raised from 0.78rem for the same reason as .card__meta */
+  font-size: 0.84rem;
   letter-spacing: 0.04em;
   color: var(--muted);
   padding-top: 0.3rem;
@@ -399,7 +391,8 @@ h1, h2, h3 {
 }
 
 .card__meta {
-  font-size: 0.72rem;
+  /* raised from 0.72rem: at a 13px root that scaled to ~9px, too small to read */
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--muted);
@@ -420,28 +413,6 @@ h1, h2, h3 {
   font-size: 0.89rem;
   line-height: 1.65;
 }
-
-/* ---------------- skills ---------------- */
-
-.skills { margin-top: clamp(2.5rem, 6vw, 4rem); }
-
-.skills__row {
-  display: grid;
-  grid-template-columns: 12.5rem 1fr;
-  gap: clamp(1rem, 3vw, 2.5rem);
-  padding-block: 1.15rem;
-  border-top: 1px solid var(--rule);
-}
-
-.skills__label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  padding-top: 0.2rem;
-}
-
-.skills__value { font-size: 0.89rem; line-height: 1.62; }
 
 /* ---------------- footer ---------------- */
 
@@ -489,8 +460,7 @@ h1, h2, h3 {
   }
   .hero__name { font-size: clamp(1.85rem, 8vw, 2.4rem); }
 
-  .entry,
-  .skills__row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .entry { grid-template-columns: 1fr; gap: 0.5rem; }
   .entry__when { padding-top: 0; }
 
   .nav__links { gap: 1rem; }
