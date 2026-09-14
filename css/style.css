@@ -189,6 +189,22 @@ h1, h2, h3 {
 
 .links a:hover .icon { color: var(--ink); }
 
+/* project cards: link row pinned to the card bottom so rows align */
+.card__links {
+  margin-top: auto;
+  padding-top: 1.15rem;
+  gap: 0.5rem 1.2rem;
+}
+
+.card__links a { font-size: 0.85rem; }
+
+.card__soon {
+  margin: auto 0 0;
+  padding-top: 1.15rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 /* ---------------- sections ---------------- */
 
 .section {

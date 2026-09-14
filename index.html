@@ -22,6 +22,10 @@
       <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
       <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6"/>
     </symbol>
+    <symbol id="i-poster" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 16v5M8 21h8"/>
+    </symbol>
     <symbol id="i-mail" viewBox="0 0 24 24">
       <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
       <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m22 7-10 6L2 7"/>
@@ -61,7 +65,7 @@
         <p>
           My research has spanned generative models for medical imaging, alignment methods for
           language models, and computational pipelines for cancer detection from cell-free DNA.
-          I'm currently a computational biology research intern at Roche.
+          I most recently worked as a computational biology research intern at Roche Diagnostics.
         </p>
       </div>
 
@@ -84,26 +88,36 @@
 
       <ol class="timeline">
         <li class="entry">
-          <div class="entry__when">Jun 2026 &ndash; present</div>
+          <div class="entry__when">Jun &ndash; Sep 2026</div>
           <div class="entry__what">
             <h3>Computational Biology Research Intern</h3>
-            <p class="entry__org">Roche &middot; Santa Clara, CA</p>
+            <p class="entry__org">Roche Diagnostics &middot; Santa Clara, CA</p>
+            <ul class="facts">
+              <li>Corrected batch effects confounding multiple high-dimensional single-cell RNA-seq datasets, enabling joint analysis.</li>
+              <li>Applied single-cell machine learning models to held-out data; presented results to senior leadership and partners.</li>
+            </ul>
           </div>
         </li>
         <li class="entry">
           <div class="entry__when">Sep 2025 &ndash; Jun 2026</div>
           <div class="entry__what">
             <h3>Machine Learning Research Assistant</h3>
-            <p class="entry__org">Alizadeh and Esfahani Labs, Stanford Medicine &middot; Stanford, CA</p>
-            <p class="entry__note">Parallelized data-processing pipelines for plasma cell-free DNA whole genome sequencing, and neural network architectures for gene expression inference and non-invasive cancer detection.</p>
+            <p class="entry__org">Alizadeh and Esfahani Labs &middot; Stanford, CA</p>
+            <ul class="facts">
+              <li>Built parallelized pipelines processing deep whole-genome plasma cell-free DNA sequencing data on HPC clusters.</li>
+              <li>Designed neural networks mapping noisy fragmentation signal to a 20,000-dimensional gene expression target.</li>
+            </ul>
           </div>
         </li>
         <li class="entry">
           <div class="entry__when">Apr &ndash; Jun 2025</div>
           <div class="entry__what">
-            <h3>Computational Microscopy Research Intern</h3>
+            <h3>Computational Imaging Research Intern</h3>
             <p class="entry__org">&Eacute;cole Polytechnique &middot; Paris, France</p>
-            <p class="entry__note">Python workflows generating synthetic Fluorescence-Lifetime Imaging Microscopy images; wavelet filtering for phasor analysis of FLIM data.</p>
+            <ul class="facts">
+              <li>Generated synthetic imaging data in Python to benchmark wavelet denoising under low-photon noise regimes.</li>
+              <li>Evaluated the pawFLIM wavelet filter for integration into an open-source phasor analysis tool (FLUTE).</li>
+            </ul>
           </div>
         </li>
         <li class="entry">
@@ -111,7 +125,10 @@
           <div class="entry__what">
             <h3>Computational Biomechanics Intern</h3>
             <p class="entry__org">French National Centre for Scientific Research (CNRS) &middot; France</p>
-            <p class="entry__note">FEM simulation of corneal inflation, extending material models for anisotropy and heterogeneity; fit stiffness to experimental data within 5% of literature values.</p>
+            <ul class="facts">
+              <li>Simulated corneal inflation with FEM, extending material models to account for anisotropy and heterogeneity.</li>
+              <li>Applied optimization to fit model stiffness to experimental data, achieving results within 5% of literature values.</li>
+            </ul>
           </div>
         </li>
         <li class="entry">
@@ -119,7 +136,10 @@
           <div class="entry__what">
             <h3>Quantitative Systems Pharmacology Research Intern</h3>
             <p class="entry__org">Curie Institute &middot; Paris, France</p>
-            <p class="entry__note">Circadian PK/PD models of Nivolumab capturing time-of-day dependent drug dynamics.</p>
+            <ul class="facts">
+              <li>Built mechanistic PK/PD models to test a candidate causal mechanism for treatment-timing effects on survival.</li>
+              <li>Ruled out PK variations as the driver (&lt;1% AUC difference), redirecting the study to other mechanisms.</li>
+            </ul>
           </div>
         </li>
         <li class="entry">
@@ -127,7 +147,10 @@
           <div class="entry__what">
             <h3>Computational Biology Research Intern</h3>
             <p class="entry__org">&Eacute;cole Polytechnique &middot; Paris, France</p>
-            <p class="entry__note">Simulations of axonal growth, arborization, and pruning in an auditory neural circuit.</p>
+            <ul class="facts">
+              <li>Built Python simulations of axonal growth, arborization, and pruning in an auditory neural circuit.</li>
+              <li>Rejected a random-pruning null model against observed connectivity data from an auditory brainstem circuit.</li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -144,31 +167,58 @@
 
       <div class="grid">
         <article class="card">
-          <div class="card__meta">Stanford University &middot; 2026</div>
-          <h3 class="card__title">FA-KGD</h3>
-          <p class="card__kicker">Frequency-aware Kalman-guided diffusion for MRI</p>
-          <p class="card__body">A training-free diffusion sampler that makes MRI reconstruction frequency-aware through a Kalman-gated data-consistency step. Improves PSNR over &Pi;GDM across all fastMRI brain and knee settings, up to +0.51 dB at under 1% overhead.</p>
+          <div class="card__meta">In progress &middot; 2026</div>
+          <h3 class="card__title">Long-Context Attention</h3>
+          <p class="card__kicker">Distributed dense, windowed and block-sparse kernels</p>
+          <p class="card__body">Currently being written up. The repository is still private &mdash; code and report will be linked here once it is public.</p>
+          <p class="card__soon">Code and report coming soon</p>
         </article>
 
         <article class="card">
-          <div class="card__meta">Stanford University &middot; 2026</div>
+          <div class="card__meta">Stanford University &middot; Apr&ndash;Jun 2026</div>
+          <h3 class="card__title">FA-KGD</h3>
+          <p class="card__kicker">Frequency-aware Kalman-guided diffusion for MRI</p>
+          <p class="card__body">A training-free diffusion sampler that makes MRI reconstruction frequency-aware through a Kalman-gated data-consistency step. Improves PSNR over &Pi;GDM across all fastMRI brain and knee settings, scaling to +0.51 dB at under 1% overhead.</p>
+          <ul class="links card__links">
+            <li><a href="https://github.com/carlo-scr/fastmri" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="links__label">Code</span></a></li>
+            <li><a href="assets/projects/fa-kgd-report.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="links__label">Report</span></a></li>
+            <li><a href="assets/projects/fa-kgd-poster.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-poster"/></svg><span class="links__label">Poster</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__meta">Stanford University &middot; Jan&ndash;Mar 2026</div>
           <h3 class="card__title">FACT</h3>
           <p class="card__kicker">Focused attention consistency training</p>
           <p class="card__body">A post-training method that makes language model behavior consistent by penalizing attention to adversarial cues. Reduced jailbreak success from 78% to 7% and sycophancy from 53% to 30% without degrading general capabilities.</p>
+          <ul class="links card__links">
+            <li><a href="https://github.com/j-hartenstein/focused-attention-fact" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="links__label">Code</span></a></li>
+            <li><a href="assets/projects/fact-report.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="links__label">Report</span></a></li>
+            <li><a href="assets/projects/fact-poster.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-poster"/></svg><span class="links__label">Poster</span></a></li>
+          </ul>
         </article>
 
         <article class="card">
-          <div class="card__meta">Stanford University &middot; 2025</div>
-          <h3 class="card__title">Fairness in University Admissions</h3>
+          <div class="card__meta">Stanford University &middot; Sep&ndash;Dec 2025</div>
+          <h3 class="card__title">Fair Cohort Selection in University Admissions</h3>
           <p class="card__kicker">Integer programming under fairness constraints</p>
           <p class="card__body">Formulated admissions as an integer linear program with fairness constraints to analyze utility&ndash;equity trade-offs, showing that intersectional disparities persist even under single-attribute constraints.</p>
+          <ul class="links card__links">
+            <li><a href="https://github.com/EmmaSampietro/fair_cohort_selection" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="links__label">Code</span></a></li>
+            <li><a href="assets/projects/fair-cohort-selection-report.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="links__label">Report</span></a></li>
+          </ul>
         </article>
 
         <article class="card">
-          <div class="card__meta">&Eacute;cole Polytechnique &middot; 2024</div>
+          <div class="card__meta">&Eacute;cole Polytechnique &middot; Feb&ndash;Jun 2024</div>
           <h3 class="card__title">Faraday Effect Simulator</h3>
           <p class="card__kicker">FDTD solver for Maxwell's equations</p>
           <p class="card__body">A Finite-Difference Time-Domain solver simulating electromagnetic wave propagation, recovering polarization rotation under an external magnetic field within 5% of theory.</p>
+          <ul class="links card__links">
+            <li><a href="https://github.com/EmmaSampietro/Faraday-effect-simulator" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="links__label">Code</span></a></li>
+            <li><a href="assets/projects/faraday-report.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="links__label">Report</span></a></li>
+            <li><a href="assets/projects/faraday-presentation.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-poster"/></svg><span class="links__label">Presentation</span></a></li>
+          </ul>
         </article>
       </div>
     </div>
@@ -186,10 +236,10 @@
           <div class="entry__when">Sep 2025 &ndash; Jun 2027</div>
           <div class="entry__what">
             <h3>Stanford University</h3>
-            <p class="entry__org">MS, Computational and Mathematical Engineering &middot; GPA 4.0/4.0 &middot; Stanford, CA</p>
+            <p class="entry__org">MS, Computational and Mathematical Engineering &middot; GPA 4.04/4.30 &middot; Stanford, CA</p>
             <ul class="facts">
               <li><span class="facts__label">Relevant courses</span> Machine Learning, Natural Language Processing, Computer Vision, Optimization, Numerical Linear Algebra, Numerical Methods for PDEs, Parallel Computing using CUDA.</li>
-              <li><span class="facts__label">Extracurriculars</span> Society of Women Engineers (SWE), Women in STEM (WiMSCE), Stanford Cycling Club.</li>
+              <li><span class="facts__label">Extracurriculars</span> Teaching Assistant for CME100 Vector Calculus for Engineers (Fall 2026), Society of Women Engineers (SWE), Women in STEM (WiMSCE), Stanford Cycling Club.</li>
             </ul>
           </div>
         </li>
@@ -197,7 +247,7 @@
           <div class="entry__when">Sep 2022 &ndash; Jun 2025</div>
           <div class="entry__what">
             <h3>&Eacute;cole Polytechnique</h3>
-            <p class="entry__org">BS, Mathematics and Physics, minor in Biology &middot; GPA 4.09/4.3 &middot; Paris, France</p>
+            <p class="entry__org">BS, Mathematics and Physics, minor in Biology &middot; GPA 4.09/4.30 &middot; Paris, France</p>
             <ul class="facts">
               <li><span class="facts__label">Relevant courses</span> Vector Calculus, Analysis, Linear Algebra, Probability and Statistics, Quantum and Statistical Physics, Classical and Fluid Mechanics, Optics and Electromagnetism, Cellular and Molecular Biology.</li>
               <li><span class="facts__label">Extracurriculars</span> Program Ambassador, Volunteering Committee Event Manager (VolunteerX), First-Year Integration Committee Board Member, Fencing tournament quarter-finalist (Coup de l'X).</li>
@@ -208,7 +258,7 @@
           <div class="entry__when">Sep &ndash; Dec 2024</div>
           <div class="entry__what">
             <h3>University of California, San Diego</h3>
-            <p class="entry__org">Exchange quarter &middot; GPA 4.0/4.0 &middot; La Jolla, CA</p>
+            <p class="entry__org">Exchange quarter through &Eacute;cole Polytechnique &middot; GPA 4.00/4.00 &middot; La Jolla, CA</p>
             <ul class="facts">
               <li><span class="facts__label">Relevant courses</span> Statistics, Complex Analysis, Advanced Quantum Mechanics, Biological Physics.</li>
               <li><span class="facts__label">Extracurriculars</span> Strides Run Club.</li>
@@ -220,14 +270,22 @@
       <div class="skills">
         <div class="skills__row">
           <span class="skills__label">Programming</span>
-          <span class="skills__value">Python (NumPy, SciPy, scikit-learn, PyTorch), C, Julia, MATLAB, R, Abaqus FEA, LaTeX</span>
+          <span class="skills__value">Python (NumPy, Pandas, SciPy, scikit-learn, PyTorch), C, Julia, MATLAB, R, Git, LaTeX</span>
         </div>
         <div class="skills__row">
           <span class="skills__label">Languages</span>
           <span class="skills__value">English (fluent, C2), Italian (native), French (advanced, C1), Chinese (basic, HSK2)</span>
         </div>
         <div class="skills__row">
-          <span class="skills__label">Beyond work</span>
+          <span class="skills__label">Hackathon</span>
+          <span class="skills__value">Selected for the Hack-Nation Venture Lab (top 1%) at the Hack-Nation Global AI Hackathon</span>
+        </div>
+        <div class="skills__row">
+          <span class="skills__label">Teaching</span>
+          <span class="skills__value">Taught English to children aged 5&ndash;12, creating an engaging learning environment (Jul&ndash;Aug 2025)</span>
+        </div>
+        <div class="skills__row">
+          <span class="skills__label">Sports</span>
           <span class="skills__value">1st Italian Fencing Nationals 2017 &middot; Fencing World Cup 2023 volunteer &middot; Paris 2025 Marathon</span>
         </div>
       </div>
