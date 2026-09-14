@@ -189,6 +189,15 @@ h1, h2, h3 {
 
 .links a:hover .icon { color: var(--ink); }
 
+/* link inside running text, e.g. an organisation name in a skills row */
+.inline-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.2s ease;
+}
+
+.inline-link:hover { border-bottom-color: var(--ink); }
+
 /* project cards: link row pinned to the card bottom so rows align */
 .card__links {
   margin-top: auto;
