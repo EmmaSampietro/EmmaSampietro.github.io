@@ -249,21 +249,26 @@ h1, h2, h3 {
 .section--first { padding-top: clamp(1.4rem, 2.4vw, 2.1rem); }
 .section--first .section__head { margin-bottom: clamp(0.9rem, 1.8vw, 1.4rem); }
 
-/* stripped-back education rows */
-.timeline--slim .entry { padding-block: 0.9rem; }
+/* stripped-back education rows: logo | text | dates at the right edge */
+.timeline--slim .entry {
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  gap: 0 1rem;
+  align-items: start;
+  padding-block: 0.9rem;
+}
 
-.entry__what--logo {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
+.timeline--slim .entry__when {
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 0.15rem;
 }
 
 .logo {
   width: 30px;
   height: 30px;
-  flex: none;
   object-fit: contain;
-  margin-top: 0.1rem;
+  /* centred against the two text lines, as in the reference */
+  align-self: center;
 }
 
 .entry__when {
@@ -442,6 +447,17 @@ h1, h2, h3 {
   .entry,
   .skills__row { grid-template-columns: 1fr; gap: 0.5rem; }
   .entry__when { padding-top: 0; }
+
+  .timeline--slim .entry {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0 0.75rem;
+  }
+  .timeline--slim .entry__when {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    padding-top: 0.3rem;
+  }
   .nav__links { gap: 1rem; }
   .nav__links a { font-size: 0.82rem; }
 }
