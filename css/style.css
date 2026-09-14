@@ -198,6 +198,24 @@ h1, h2, h3 {
 
 .inline-link:hover { border-bottom-color: var(--ink); }
 
+/* project figure; click through for a legible full-size view, since the
+   labels in these plots are too small to read at card width */
+.card__figure {
+  display: block;
+  margin-top: 1.15rem;
+  border: 1px solid var(--rule);
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.card__figure:hover { border-color: var(--ink); }
+
+.card__figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* project cards: link row pinned to the card bottom so rows align */
 .card__links {
   margin-top: auto;
