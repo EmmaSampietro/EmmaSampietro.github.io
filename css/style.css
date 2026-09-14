@@ -205,13 +205,22 @@ h1, h2, h3 {
    labels in these plots are too small to read at card width */
 .card__figure {
   display: block;
-  margin-top: 1.15rem;
+  margin-top: 1.9rem;
   border: 1px solid var(--rule);
   background: #fff;
   transition: border-color 0.2s ease;
 }
 
 .card__figure:hover { border-color: var(--ink); }
+
+/* this one is the squarest of the figures (1.8 vs ~2.4), so at full card
+   width it stands much taller than the rest; narrowing it evens them up.
+   Left full width on mobile, where there is no room to give away. */
+.card__figure--narrow { margin-inline: auto; }
+
+@media (min-width: 561px) {
+  .card__figure--narrow { max-width: 80%; }
+}
 
 .card__figure img {
   width: 100%;
