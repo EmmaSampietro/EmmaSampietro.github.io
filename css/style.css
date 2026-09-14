@@ -20,6 +20,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
+  /* one notch down: every size below is in rem, so this scales the whole
+     type scale (and the rem-based spacing) by 15/16 */
+  font-size: 15px;
   scroll-behavior: smooth;
   /* keep anchor targets clear of the sticky nav */
   scroll-padding-top: 5rem;
@@ -31,7 +34,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -249,13 +252,6 @@ h1, h2, h3 {
 .section__head h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: -0.03em;
-}
-
-.section__sub {
-  margin: 0.7rem 0 0;
-  max-width: 52ch;
-  color: var(--muted);
-  font-size: 0.92rem;
 }
 
 /* ---------------- timeline ---------------- */
