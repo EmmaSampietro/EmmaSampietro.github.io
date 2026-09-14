@@ -258,19 +258,26 @@ h1, h2, h3 {
 .section--first { padding-top: clamp(1.4rem, 2.4vw, 2.1rem); }
 .section--first .section__head { margin-bottom: clamp(0.9rem, 1.8vw, 1.4rem); }
 
-/* stripped-back education rows: logo | text | dates at the right edge */
-.timeline--slim .entry {
+/* shared row layout: logo | text | dates at the right edge */
+.timeline--logos .entry {
   grid-template-columns: 3.25rem minmax(0, 1fr) auto;
   gap: 0 1rem;
   align-items: start;
-  padding-block: 0.9rem;
+  padding-block: 1.2rem;
 }
 
-.timeline--slim .entry__when {
+.timeline--logos .entry__when {
   text-align: right;
   white-space: nowrap;
   padding-top: 0.15rem;
 }
+
+/* with the date column moved right, the text has ~180px more to work with,
+   so let the bullets use it instead of wrapping at 64ch */
+.timeline--logos .facts { max-width: none; }
+
+/* education has no bullets, so its rows can sit tighter */
+.timeline--slim .entry { padding-block: 0.9rem; }
 
 .logo {
   /* fixed box + contain: square marks and tall lockups both fit without
@@ -279,9 +286,12 @@ h1, h2, h3 {
   width: 44px;
   height: 54px;
   object-fit: contain;
-  /* centred against the text lines, as in the reference */
-  align-self: center;
+  /* aligns with the title; education re-centres it below */
+  align-self: start;
 }
+
+/* education rows are only two lines, so centring reads better there */
+.timeline--slim .logo { align-self: center; }
 
 .entry__when {
   font-size: 0.78rem;
@@ -488,11 +498,11 @@ a:focus-visible {
 
 /* only once the row is genuinely too narrow does the date drop below the text */
 @media (max-width: 520px) {
-  .timeline--slim .entry {
+  .timeline--logos .entry {
     grid-template-columns: 3rem minmax(0, 1fr);
     gap: 0 0.75rem;
   }
-  .timeline--slim .entry__when {
+  .timeline--logos .entry__when {
     grid-column: 2;
     grid-row: 2;
     text-align: left;
