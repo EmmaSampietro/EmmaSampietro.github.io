@@ -251,7 +251,7 @@ h1, h2, h3 {
 
 /* stripped-back education rows: logo | text | dates at the right edge */
 .timeline--slim .entry {
-  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  grid-template-columns: 3.25rem minmax(0, 1fr) auto;
   gap: 0 1rem;
   align-items: start;
   padding-block: 0.9rem;
@@ -264,10 +264,13 @@ h1, h2, h3 {
 }
 
 .logo {
-  width: 30px;
-  height: 30px;
+  /* fixed box + contain: square marks and tall lockups both fit without
+     distorting. Setting max-width and max-height together squashes the
+     image instead of scaling it. */
+  width: 44px;
+  height: 54px;
   object-fit: contain;
-  /* centred against the two text lines, as in the reference */
+  /* centred against the text lines, as in the reference */
   align-self: center;
 }
 
@@ -448,16 +451,6 @@ h1, h2, h3 {
   .skills__row { grid-template-columns: 1fr; gap: 0.5rem; }
   .entry__when { padding-top: 0; }
 
-  .timeline--slim .entry {
-    grid-template-columns: 2.25rem minmax(0, 1fr);
-    gap: 0 0.75rem;
-  }
-  .timeline--slim .entry__when {
-    grid-column: 2;
-    grid-row: 2;
-    text-align: left;
-    padding-top: 0.3rem;
-  }
   .nav__links { gap: 1rem; }
   .nav__links a { font-size: 0.82rem; }
 }
@@ -482,4 +475,18 @@ a:focus-visible {
 
 @media print {
   .nav, .reveal { position: static; opacity: 1; transform: none; }
+}
+
+/* only once the row is genuinely too narrow does the date drop below the text */
+@media (max-width: 520px) {
+  .timeline--slim .entry {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0 0.75rem;
+  }
+  .timeline--slim .entry__when {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    padding-top: 0.3rem;
+  }
 }
