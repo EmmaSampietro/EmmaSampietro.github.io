@@ -142,7 +142,8 @@ h1, h2, h3 {
 
 .hero__bio {
   margin-top: clamp(1rem, 2vw, 1.4rem);
-  max-width: 66ch;
+  /* no measure cap: 66ch left ~257px of the column unused, and the experience
+     lines already run the full width */
 }
 
 .hero__bio p {
