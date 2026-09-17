@@ -207,11 +207,17 @@
 
       <div class="grid">
         <article class="card">
-          <div class="card__meta">In progress &middot; 2026</div>
+          <div class="card__meta">Stanford University &middot; CME 213</div>
           <h3 class="card__title">Long-Context Attention</h3>
-          <p class="card__kicker">Distributed dense, windowed and block-sparse kernels</p>
-          <p class="card__body">Currently being written up. The repository is still private &mdash; code and report will be linked here once it is public.</p>
-          <p class="card__soon">Code and report coming soon</p>
+          <p class="card__kicker">Dense, windowed and block-sparse CUDA kernels</p>
+          <p class="card__body">Hand-written FlashAttention-style CUDA attention kernels for long sequences, scaled across four GPUs with MPI. The windowed FP16 tensor-core kernel runs 21&times; faster than PyTorch's scaled dot-product attention at 32K tokens and 49&times; at 128K, and moving from a head-parallel to a sequence-parallel decomposition reached 96% scaling efficiency on four GPUs.</p>
+          <a class="card__figure card__figure--fit" style="--fig-max: 65%" href="assets/projects/Long_context_figure.png" target="_blank" rel="noopener">
+            <img src="assets/projects/Long_context_figure.png" alt="Log-log plot of wall time against sequence length for the dense, windowed and block-sparse kernels versus PyTorch SDPA-FP16, with the windowed FP16 kernel tracking O(N) while dense and SDPA track O(N squared)" width="1132" height="772" loading="lazy">
+          </a>
+          <ul class="links card__links">
+            <li><a href="https://github.com/EmmaSampietro/long-context-attention-cuda" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span class="links__label">Code</span></a></li>
+            <li><a href="assets/projects/long-context-attention-report.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="links__label">Report</span></a></li>
+          </ul>
         </article>
 
         <article class="card">
@@ -249,7 +255,7 @@
           <h3 class="card__title">Fair Cohort Selection in University Admissions</h3>
           <p class="card__kicker">Integer programming under fairness constraints</p>
           <p class="card__body">Formulated admissions as an integer linear program with fairness constraints to analyze utility&ndash;equity trade-offs, showing that intersectional disparities persist even under single-attribute constraints.</p>
-            <a class="card__figure card__figure--narrow" href="assets/projects/cohort_selection_figure.png" target="_blank" rel="noopener">
+            <a class="card__figure card__figure--fit" style="--fig-max: 80%" href="assets/projects/cohort_selection_figure.png" target="_blank" rel="noopener">
               <img src="assets/projects/cohort_selection_figure.png" alt="Bar chart of intersectional disparity by model: 0.38% under the intersectional constraint against a 7.67% baseline and 18.33% for actual admissions" width="1200" height="668" loading="lazy">
             </a>
           <ul class="links card__links">

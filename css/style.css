@@ -204,13 +204,14 @@ h1, h2, h3 {
 
 .card__figure:hover { border-color: var(--ink); }
 
-/* this one is the squarest of the figures (1.8 vs ~2.4), so at full card
-   width it stands much taller than the rest; narrowing it evens them up.
-   Left full width on mobile, where there is no room to give away. */
-.card__figure--narrow { margin-inline: auto; }
+/* figures vary from 1.47 to 2.63 in aspect, so at full card width the squarer
+   ones stand much taller than the rest. Each card sets --fig-max to the width
+   that brings its figure to roughly the same height as the others. Left full
+   width on mobile, where there is no width to give away. */
+.card__figure--fit { margin-inline: auto; }
 
 @media (min-width: 561px) {
-  .card__figure--narrow { max-width: 80%; }
+  .card__figure--fit { max-width: var(--fig-max, 100%); }
 }
 
 .card__figure img {
@@ -227,13 +228,6 @@ h1, h2, h3 {
 }
 
 .card__links a { font-size: 0.85rem; }
-
-.card__soon {
-  margin: auto 0 0;
-  padding-top: 1.15rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
 
 /* ---------------- sections ---------------- */
 
