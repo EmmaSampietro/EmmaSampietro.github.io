@@ -108,11 +108,20 @@ h1, h2, h3 {
 .hero {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(1.5rem, 3.5vw, 3rem);
+  column-gap: clamp(1.5rem, 3.5vw, 3rem);
+  row-gap: clamp(0.9rem, 1.8vw, 1.4rem);
   align-items: start;
   padding-top: clamp(1.75rem, 3.5vw, 3rem);
   padding-bottom: clamp(1rem, 2vw, 1.4rem);
 }
+
+/* the intro spans both columns so it runs the full content width and lines up
+   with the education rows; inside the right-hand column alone it started
+   239px in, level with the photo's right edge rather than the page margin */
+.hero__body { grid-column: 1 / -1; }
+
+/* centred against the portrait now that it is the only thing beside it */
+.hero__text { align-self: center; }
 
 .hero__photo img {
   width: clamp(124px, 16vw, 200px);
@@ -140,11 +149,9 @@ h1, h2, h3 {
   color: var(--muted);
 }
 
-.hero__bio {
-  margin-top: clamp(1rem, 2vw, 1.4rem);
-  /* no measure cap: 66ch left ~257px of the column unused, and the experience
-     lines already run the full width */
-}
+/* no measure cap: 66ch left ~257px of the column unused, and the experience
+   lines already run the full width */
+.hero__bio { margin-top: 0; }
 
 .hero__bio p {
   margin: 0;
