@@ -280,10 +280,6 @@ h1, h2, h3 {
   padding-top: 0.15rem;
 }
 
-/* with the date column moved right, the text has ~180px more to work with,
-   so let the bullets use it instead of wrapping at 64ch */
-.timeline--logos .facts { max-width: none; }
-
 /* education has no bullets, so its rows can sit tighter */
 .timeline--slim .entry { padding-block: 0.9rem; }
 
@@ -318,49 +314,14 @@ h1, h2, h3 {
   color: var(--muted);
 }
 
+/* the single summary line is the content of the row, so it stays ink; the
+   org line above it is metadata and stays muted. Same size and colour on both
+   made them read as one block. */
 .entry__note {
-  margin: 0.6rem 0 0;
-  max-width: 66ch;
+  margin: 0.5rem 0 0;
   font-size: 0.89rem;
   line-height: 1.62;
 }
-
-/* labelled bullets inside a timeline entry (education courses / activities) */
-
-.facts {
-  list-style: none;
-  margin: 0.8rem 0 0;
-  padding: 0;
-  max-width: 64ch;
-}
-
-.facts li {
-  position: relative;
-  padding-left: 1.1rem;
-  font-size: 0.89rem;
-  line-height: 1.62;
-  color: var(--muted);
-}
-
-.facts li + li { margin-top: 0.45rem; }
-
-/* short hairline dash instead of a round bullet, to match the rules elsewhere */
-.facts li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 6px;
-  height: 1px;
-  background: var(--rule);
-}
-
-.facts__label {
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.facts__label::after { content: "\00a0\00b7\00a0"; color: var(--rule); font-weight: 400; }
 
 /* ---------------- project cards ---------------- */
 
