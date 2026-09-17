@@ -210,7 +210,7 @@
           <div class="card__meta">Stanford University &middot; CME213 &middot; Apr&ndash;Jun 2026</div>
           <h3 class="card__title">Long-Context Attention</h3>
           <p class="card__kicker">Dense, windowed and block-sparse CUDA kernels</p>
-          <p class="card__body">Hand-written FlashAttention-style CUDA attention kernels for long sequences, scaled across four GPUs with MPI. The windowed FP16 tensor-core kernel runs 21&times; faster than PyTorch's scaled dot-product attention at 32K tokens and 49&times; at 128K, and moving from a head-parallel to a sequence-parallel decomposition reached 96% scaling efficiency on four GPUs.</p>
+          <p class="card__body">FlashAttention-style CUDA attention kernels for long sequences, scaled across four GPUs with MPI. The windowed FP16 tensor-core kernel runs 21&times; faster than PyTorch's scaled dot-product attention at 32K tokens and 49&times; at 128K.</p>
           <a class="card__figure card__figure--fit" style="--fig-max: 55%" href="assets/projects/Long_context_figure.png" target="_blank" rel="noopener">
             <img src="assets/projects/Long_context_figure.png" alt="Log-log plot of wall time against sequence length for the dense, windowed and block-sparse kernels versus PyTorch SDPA-FP16, with the windowed FP16 kernel tracking O(N) while dense and SDPA track O(N squared)" width="1132" height="772" loading="lazy">
           </a>
