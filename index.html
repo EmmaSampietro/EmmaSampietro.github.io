@@ -211,7 +211,7 @@
           <h3 class="card__title">Long-Context Attention</h3>
           <p class="card__kicker">Dense, windowed and block-sparse CUDA kernels</p>
           <p class="card__body">FlashAttention-style CUDA attention kernels for long sequences, scaled across four GPUs with MPI. The windowed FP16 tensor-core kernel runs 21&times; faster than PyTorch's scaled dot-product attention at 32K tokens and 49&times; at 128K.</p>
-          <a class="card__figure card__figure--fit" style="--fig-max: 55%" href="assets/projects/Long_context_figure.png" target="_blank" rel="noopener">
+          <a class="card__figure card__figure--fit" style="--fig-max: 62%" href="assets/projects/Long_context_figure.png" target="_blank" rel="noopener">
             <img src="assets/projects/Long_context_figure.png" alt="Log-log plot of wall time against sequence length for the dense, windowed and block-sparse kernels versus PyTorch SDPA-FP16, with the windowed FP16 kernel tracking O(N) while dense and SDPA track O(N squared)" width="1132" height="772" loading="lazy">
           </a>
           <ul class="links card__links">
@@ -224,7 +224,7 @@
           <div class="card__meta">Stanford University &middot; CS231N &middot; Apr&ndash;Jun 2026</div>
           <h3 class="card__title">FA-KGD</h3>
           <p class="card__kicker">Frequency-aware Kalman-guided diffusion for MRI</p>
-          <p class="card__body">A training-free diffusion sampler that makes MRI reconstruction frequency-aware through a Kalman-gated data-consistency step. Improves PSNR over &Pi;GDM across all fastMRI brain and knee settings, scaling to +0.51 dB at under 1% overhead.</p>
+          <p class="card__body">A training-free diffusion sampler that makes MRI reconstruction frequency-aware through a Kalman-gated data-consistency step. Improves PSNR over &Pi;GDM across all fastMRI brain and knee settings, scaling to +0.51 dB at &lt; 1% overhead.</p>
             <a class="card__figure" href="assets/projects/fakgd_figure.jpg" target="_blank" rel="noopener">
               <img src="assets/projects/fakgd_figure.jpg" alt="MRI brain slice with cortical and ventricular crops, comparing ground truth, &Pi;GDM and FA-KGD reconstructions with PSNR labels and an error-difference map" width="1200" height="456" loading="lazy">
             </a>
@@ -255,7 +255,7 @@
           <h3 class="card__title">Fair Cohort Selection in University Admissions</h3>
           <p class="card__kicker">Integer programming under fairness constraints</p>
           <p class="card__body">Formulated admissions as an integer linear program with fairness constraints to analyze utility&ndash;equity trade-offs, showing that intersectional disparities persist even under single-attribute constraints.</p>
-            <a class="card__figure card__figure--fit" style="--fig-max: 73%" href="assets/projects/cohort_selection_figure.png" target="_blank" rel="noopener">
+            <a class="card__figure card__figure--fit" style="--fig-max: 77%" href="assets/projects/cohort_selection_figure.png" target="_blank" rel="noopener">
               <img src="assets/projects/cohort_selection_figure.png" alt="Bar chart of intersectional disparity by model: 0.38% under the intersectional constraint against a 7.67% baseline and 18.33% for actual admissions" width="1200" height="668" loading="lazy">
             </a>
           <ul class="links card__links">
