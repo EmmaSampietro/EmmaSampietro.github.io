@@ -192,6 +192,15 @@ h1, h2, h3 {
 
 .links a:hover .icon { color: var(--ink); }
 
+/* link inside running text, e.g. a programme name in the intro */
+.inline-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.2s ease;
+}
+
+.inline-link:hover { border-bottom-color: var(--ink); }
+
 /* project figure; click through for a legible full-size view, since the
    labels in these plots are too small to read at card width */
 .card__figure {
