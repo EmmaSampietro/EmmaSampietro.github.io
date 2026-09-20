@@ -9,7 +9,6 @@ index.html                     single page: hero, about, experience, projects, e
 css/style.css                  all styling; palette lives in the :root custom properties
 js/main.js                     sticky-nav state, scroll reveal, active nav link
 assets/emma.jpg                hero portrait
-assets/Emma_Sampietro_CV.pdf   CV, linked from the hero and footer
 .nojekyll                      serve files verbatim, skip Jekyll
 ```
 
@@ -34,7 +33,3 @@ To go live:
 The site appears at <https://emmasampietro.github.io> within a minute or two. After that,
 every push to `main` redeploys automatically.
 
-## Updating the CV
-
-Replace `assets/Emma_Sampietro_CV.pdf`, keeping the filename the same so the link and any
-shared URLs keep working.
