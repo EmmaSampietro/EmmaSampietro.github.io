@@ -4,7 +4,7 @@
    ============================================================ */
 
 :root {
-  --paper:     #FAFAF8;
+  --paper:     #FFFFFF;
   --paper-alt: #F1F0EC;
   --ink:       #111111;
   --muted:     #6B6B66;
@@ -76,16 +76,9 @@ h1, h2, h3 {
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   height: 3.9rem;
-}
-
-.nav__mark {
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  text-decoration: none;
 }
 
 .nav__links {
@@ -272,10 +265,6 @@ h1, h2, h3 {
 
 .entry:first-child { border-top: none; padding-top: 0; }
 
-/* the first section sits closer to the hero so education reads on landing */
-.section--first { padding-top: clamp(1.1rem, 2vw, 1.7rem); }
-.section--first .section__head { margin-bottom: clamp(0.9rem, 1.8vw, 1.4rem); }
-
 /* shared row layout: logo | text | dates at the right edge */
 .timeline--logos .entry {
   grid-template-columns: 3.25rem minmax(0, 1fr) auto;
@@ -430,10 +419,6 @@ h1, h2, h3 {
 
   .nav__links { gap: 1rem; }
   .nav__links a { font-size: 0.82rem; }
-}
-
-@media (max-width: 400px) {
-  .nav__mark { display: none; }
 }
 
 /* ---------------- accessibility ---------------- */
