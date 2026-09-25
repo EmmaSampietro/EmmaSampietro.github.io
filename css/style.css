@@ -327,9 +327,18 @@ h1, h2, h3 {
 /* ---------------- project cards ---------------- */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1rem, 2.5vw, 1.75rem);
+  --grid-gap: clamp(1rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--grid-gap);
+}
+
+/* three per row; the width is computed rather than 1fr so the last row can
+   centre instead of stretching */
+.card {
+  flex: 0 1 calc((100% - 2 * var(--grid-gap)) / 3);
+  min-width: 0;
 }
 
 .card {
@@ -406,11 +415,11 @@ h1, h2, h3 {
 
 /* three across on wide screens, two when the cards get tight, one on phones */
 @media (max-width: 1000px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .card { flex-basis: calc((100% - var(--grid-gap)) / 2); }
 }
 
 @media (max-width: 680px) {
-  .grid { grid-template-columns: 1fr; }
+  .card { flex-basis: 100%; }
 }
 
 @media (max-width: 768px) {
