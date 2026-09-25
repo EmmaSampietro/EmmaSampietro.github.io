@@ -235,7 +235,7 @@ h1, h2, h3 {
 /* ---------------- sections ---------------- */
 
 .section {
-  padding-block: clamp(2.5rem, 5vw, 4.25rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.98rem);
   border-top: 1px solid var(--rule);
 }
 
