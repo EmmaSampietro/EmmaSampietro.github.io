@@ -149,17 +149,28 @@ h1, h2, h3 {
 
 .hero__bio p + p { margin-top: 0.8rem; }
 
-/* single pulled-out honour, between the intro and the link row */
-.hero__honour {
-  display: flex;
-  gap: 0.45rem;
+/* pulled-out honours, between the intro and the link row */
+.hero__honours {
+  list-style: none;
   margin: clamp(0.9rem, 1.8vw, 1.2rem) 0 0;
+  padding: 0;
   font-size: 0.89rem;
   line-height: 1.6;
   color: var(--muted);
 }
 
-.hero__honour-mark { flex: none; }
+.hero__honours li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.hero__honours li + li { margin-top: 0.3rem; }
+
+.hero__honours li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+}
 
 /* ---------------- link row ---------------- */
 
